@@ -37,59 +37,59 @@ class PartialParse(object):
         ### YOUR CODE HERE
 
         if transition == "S":
-            
+            """
             print("===="*20)
             print("Before SHIFT")
             print("Stack : %s"%(self.stack))
             print("Buffer : %s"%(self.buffer))
             print("Dependency : %s"%(self.dependencies))
             print("----"*20)
-            
+            """
             self.stack.append(self.buffer[0])
             del self.buffer[0]
-            
+            """
             print("Result of SHIFT")
             print("Stack : %s"%(self.stack))
             print("Buffer : %s"%(self.buffer))
             print("Dependency : %s"%(self.dependencies))
             print("===="*20)
-        
+            """
         elif transition == "LA":
-            
+            """
             print("===="*20)
             print("Before Left-Arc")
             print("Stack : %s"%(self.stack))
             print("Buffer : %s"%(self.buffer))
             print("Dependency : %s"%(self.dependencies))
             print("----"*20)
-            
+            """
             self.dependencies.append((self.stack[-1],self.stack[-2]))
             del self.stack[-2]
-            
+            """
             print("Result of Left-Arc")
             print("Stack : %s"%(self.stack))
             print("Buffer : %s"%(self.buffer))
             print("Dependency : %s"%(self.dependencies))
             print("===="*20)
-
+            """
         elif transition == "RA":
-            
+            """
             print("===="*20)
             print("Before Right-Arc")
             print("Stack : %s"%(self.stack))
             print("Buffer : %s"%(self.buffer))
             print("Dependency : %s"%(self.dependencies))
             print("----"*20)
-            
+            """
             self.dependencies.append((self.stack[-2],self.stack[-1]))
             del self.stack[-1]
-            
+            """
             print("Result of Right-Arc")
             print("Stack : %s"%(self.stack))
             print("Buffer : %s"%(self.buffer))
             print("Dependency : %s"%(self.dependencies))
             print("===="*20)
-
+            """
         else:
             print("Pass wrong trasition")
         ### END YOUR CODE
